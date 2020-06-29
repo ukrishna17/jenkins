@@ -27,6 +27,11 @@ pipeline {
                 sh 'ls ./jenkins; sudo /home/ec2-user/terraform plan ./jenkins'
             }
         }
+         stage('terraform apply') {
+            steps {
+                sh 'ls ./jenkins; sudo /home/ec2-user/terraform apply ./jenkins'
+            }
+        }
         stage('terraform ended') {
             steps {
                 sh 'echo "Ended....!!"'
